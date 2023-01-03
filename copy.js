@@ -218,6 +218,15 @@ app.get('/count',async (req,res)=>{
         console.log(count)}
     })
 })
+app.post('/metrix_root',async(req,res)=>{
+    try{
+        const Matrix = new MatrixData({
+            
+        })
+    }catch(e){
+        res.send(e)
+    }
+})
 
 app.get('/', async (req, res) => {
     
