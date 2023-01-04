@@ -11,6 +11,7 @@ app.use(express.json())
 app.use(cors())
 // app.use(express.static(__dirname + '/uploads/'))
 const UserData = require('./modules/registration')
+const MatrixData = require('./modules/matrix')
 
 app.post('/register', async (req, res) => {
     try {
@@ -48,4 +49,18 @@ console.log(JSON.stringify(test))
 app.listen(port, () => {
 
     console.log(`server connected successfully on port no. ${port}`)
+})
+app.get('/matrix_root',async(req,res)=>{
+    try{
+        const Matrix = new MatrixData({
+            name: 'demo',
+            user_Id:'root',
+            matrix_Position:1,
+           
+        })
+        const MatrixResult = await Matrix.save()
+        res.send(MatrixResult)
+    }catch(e){
+        res.send(e)
+    }
 })
