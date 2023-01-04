@@ -95,7 +95,8 @@ app.post('/register', async (req, res) => {
             const income = new IncomeData(
                 {
                     user_Id: result.user_Id,
-                    level_Income: []
+                    level_Income: [],
+                    total_level_Income:0
 
                 }
             )

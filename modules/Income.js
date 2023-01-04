@@ -8,6 +8,9 @@ const IncomeSchema = new mongoose.Schema({
         required: true
 
     },
+    total_level_Income:{
+        type:Number
+    },
     level_Income:[ {
        income:{
         type: Number,
